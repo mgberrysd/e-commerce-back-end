@@ -4,9 +4,9 @@ const sequelize = require('../config/connection.js');
 
 class Tag extends Model {}
 
+// Tag model as defined in the technical acceptance criteria
 Tag.init(
   {
-    // define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,

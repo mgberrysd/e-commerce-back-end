@@ -3,7 +3,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
+// Get route for all products, also includes the associated tags and categories for those products
 router.get('/', async (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// get one product
+// Get route for a single product
 router.get('/:id', async(req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
@@ -37,7 +37,8 @@ router.get('/:id', async(req, res) => {
   }
 });
 
-// create new product
+// Post route for a product
+// Unchanged from starter code
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -70,6 +71,7 @@ router.post('/', (req, res) => {
 });
 
 // update product
+// Unchanged from starter code
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -109,11 +111,11 @@ router.put('/:id', (req, res) => {
       return res.json(product);
     })
     .catch((err) => {
-      // console.log(err);
       res.status(400).json(err);
     });
 });
 
+// Delete route for a single product
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
   try {

@@ -3,6 +3,10 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+// Tag and category endpoints are almost identical in their implementation
+// Only difference is names
+
+// Get route for all categories, also returns all products in that category
 router.get('/', async (req, res) => {
   // find all categories
   // be sure to include its associated Products
@@ -16,6 +20,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get route for a single category, also returns all products in that category
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
@@ -45,6 +50,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Put route for updating a single category name
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
@@ -65,6 +71,8 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+
+// Delete route for a single category
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
