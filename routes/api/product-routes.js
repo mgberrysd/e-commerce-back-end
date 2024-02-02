@@ -40,6 +40,7 @@ router.get('/:id', async(req, res) => {
 // Post route for a product
 // Unchanged from starter code
 router.post('/', (req, res) => {
+  // the req.body below needed some changes to work in Insomnia, namely quotes around parameters
   /* req.body should look like this...
     {
       product_name: "Basketball",
